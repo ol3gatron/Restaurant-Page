@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "Simple page with dynamic content using on javascript (no html)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ol3gatron/Restaurant-Page.git"
+  },
+  "author": "Oleg Rumyantsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ol3gatron/Restaurant-Page/issues"
+  },
+  "homepage": "https://github.com/ol3gatron/Restaurant-Page#readme",
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
