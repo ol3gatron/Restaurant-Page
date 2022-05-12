@@ -18,12 +18,15 @@ document.body.appendChild(container)
 
 container.addEventListener("click", (e) => {
   if (e.target.className === "home") {
+    container.style.height = "100vh"
     mainContent.firstChild.remove()
     mainContent.appendChild(home())
   } else if (e.target.className === "menu") {
+    container.style.height = "auto"
     mainContent.firstChild.remove()
     mainContent.appendChild(menu())
   } else if (e.target.className === "contact") {
+    container.style.height = "100vh"
     mainContent.firstChild.remove()
     mainContent.appendChild(contact())
   }

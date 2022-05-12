@@ -94,7 +94,7 @@
 }
 
 .cook {
-  background-image: url(/src/minecraft-cook-bg.png);
+  background-image: url(/src/assets/minecraft-cook-bg.png);
   background-size: cover;
   width: 400px;
   height: 400px;
@@ -193,7 +193,7 @@
 
 .contactContent {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   font-family: 'Minecraft Ten';
   font-weight: normal;
   font-style: normal;
@@ -214,4 +214,54 @@
 .contactTitle {
   padding: 5px;
   font-size: 21px;
+}
+
+@media (max-width: 980px) {
+  .header > h1 {
+    font-size: 21px;
+  }
+
+  .header > ul > li {
+    font-size: 16px;
+  }
+
+  .homeTitle {
+    font-size: 15px;
+  }
+
+  .homeContent {
+    padding: 5px;
+  }
+
+  .contactContent {
+    align-items: flex-start;
+    padding: 5px;
+  }
+
+  .contactTitle {
+    font-size: 12px;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .contactImage {
+    width: 100%;
+    height: 150px;
+  }
+
+  .cook {
+    width: 200px;
+    height: 200px;
+  }
+
+  .menuContent {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    margin: 50px;
+    gap: 15px;
+  }
+
+  .menuItem {
+
+  }
 }
