@@ -22,7 +22,9 @@ container.addEventListener("click", (e) => {
     mainContent.firstChild.remove()
     mainContent.appendChild(home())
   } else if (e.target.className === "menu") {
-    container.style.height = "auto"
+    if (x.matches) {
+      container.style.height = "auto"
+    }
     mainContent.firstChild.remove()
     mainContent.appendChild(menu())
   } else if (e.target.className === "contact") {
@@ -31,3 +33,5 @@ container.addEventListener("click", (e) => {
     mainContent.appendChild(contact())
   }
 })
+
+let x = window.matchMedia("(max-width: 950px)")
