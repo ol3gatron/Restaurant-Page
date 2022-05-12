@@ -1,6 +1,8 @@
 import css from "./style.css"
 import header from "./header.js"
 import home from "./main.js"
+import menu from "./menu.js"
+import contact from "./contact.js"
 
 const container = document.createElement("div")
 container.className = "container"
@@ -15,5 +17,14 @@ container.appendChild(mainContent)
 document.body.appendChild(container)
 
 container.addEventListener("click", (e) => {
-  console.log(e.target.className)
+  if (e.target.className === "home") {
+    mainContent.firstChild.remove()
+    mainContent.appendChild(home())
+  } else if (e.target.className === "menu") {
+    mainContent.firstChild.remove()
+    mainContent.appendChild(menu())
+  } else if (e.target.className === "contact") {
+    mainContent.firstChild.remove()
+    mainContent.appendChild(contact())
+  }
 })

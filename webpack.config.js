@@ -15,6 +15,8 @@ module.exports = {
     index: "./src/index.js",
     header: "./src/header.js",
     main: "./src/main.js",
+    menu: "./src/menu.js",
+    contact: "./src/contact.js",
   },
   output: {
     filename: '[name].bundle.js',
