@@ -29,13 +29,11 @@
 }
 
 .header {
+  position: absolute;
   width: 100%;
-  height: 15%;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: 'Minecraft Ten';
-  font-weight: normal;
-  font-style: normal;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +60,7 @@
 }
 
 .main {
-  height: 85%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +73,7 @@
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 30px;
+  margin-top: 50px;
 }
 
 .homeTitle {
@@ -96,8 +95,8 @@
 .cook {
   background-image: url(/src/assets/minecraft-cook-bg.png);
   background-size: cover;
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin: 20px;
 }
@@ -116,6 +115,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 30px;
+  margin-top: 50px;
 }
 
 .menuItem {
@@ -205,8 +205,8 @@
 }
 
 .contactImage {
-  width: 750px;
-  height: 420px;
+  width: 550px;
+  height: 300px;
   background: url(./assets/minecraft-restaurant2.jpg);
   background-size: cover;
 }
@@ -257,8 +257,8 @@
   .menuContent {
     grid-template-columns: 1fr;
     padding: 15px;
-    margin: 50px;
-    gap: 15px;
+    margin: 90px;
+    gap: 30px;
   }
 
   .menuItem {
