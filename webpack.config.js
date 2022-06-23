@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -11,28 +11,26 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack App",
+      filename: "index.html",
+      template: "src/template.html",
+    }),
+  ],
   entry: {
     index: "./src/index.js",
-    header: "./src/header.js",
-    main: "./src/main.js",
-    menu: "./src/menu.js",
-    contact: "./src/contact.js",
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Development",
-    }),
-  ],
   optimization: {
-    runtimeChunk: "single"
+    runtimeChunk: "single",
   },
 };

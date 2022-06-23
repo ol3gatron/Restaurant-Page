@@ -1,267 +1,138 @@
 @font-face {
-  font-family: 'Minecraft';
-  src: url('../src/assets/minecraft-font/Minecraft-Regular.woff2') format('woff2'),
-      url('../src/assets/minecraft-font/Minecraft-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecraft Ten';
-  src: url('../src/assets/minecraft-font/MinecraftTen.woff2') format('woff2'),
-      url('../src/assets/minecraft-font/MinecraftTen.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-family: Exo2-Thin;
+  src: url("./assets/Exo2.0-Thin.otf") format("opentype");
 }
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: Exo2-Thin;
+  background-image: url(./assets/back.png);
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  pointer-events: none;
 }
 
 .container {
-  height: 100vh;
-  width: 100%;
-  background: url("./assets/minecraft-bg.png");
-  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.header {
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  margin: 20px;
+}
+
+.card {
+  border: 4px solid #1698d9;
+  width: 320px;
+  height: 480px;
+  background-image: url(./assets/funbox_logo.png);
+  background-color: #fff;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position-y: 200px;
+  background-position-x: -25px;
+  border-radius: 5px;
+  padding: 25px 60px;
+  position: relative;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+}
+
+.card > h1, .card > h2 {
+  pointer-events: none;
+}
+
+.card-selected {
+  border: 4px solid #d91667;
+}
+
+.card--title {
+  color: #666;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.card--special {
+  color: #666;
+  pointer-events: none;
+}
+
+.weight {
+  color: #fff;
+  background-color: #1698d9;
   position: absolute;
-  width: 100%;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-family: 'Minecraft Ten';
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.header > h1 {
-  font-size: 72px;
-}
-
-.header > ul {
-  list-style: none;
-  display: flex;
-}
-
-.header > ul > li {
-  padding: 5px;
-  margin: 5px;
-  font-size: 22px;
-}
-
-.header > ul > li:hover {
-  color: #ac8888;
-}
-
-.main {
-  height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.homeContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  margin-top: 50px;
-}
-
-.homeTitle {
-  font-family: 'Minecraft Ten';
-  font-weight: normal;
-  font-style: normal;
-  color: #fff;
-  margin: 10px;
-}
-
-.homeSubTitle {
-  font-family: 'Minecraft';
-  font-weight: normal;
-  font-style: normal;
-  color: #fff;
-  margin: 10px;
-}
-
-.cook {
-  background-image: url(/src/assets/minecraft-cook-bg.png);
-  background-size: cover;
-  width: 200px;
-  height: 200px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  margin: 20px;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  user-select: none;
+  pointer-events: none;
 }
 
-.homeFooter {
-  font-family: 'Minecraft';
-  font-weight: normal;
-  font-style: normal;
+.weight-selected {
+  background-color: #d91667;
+  pointer-events: none;
+}
+
+.weight--number {
+  font-size: 32px;
+  pointer-events: none;
+}
+
+.weight--kg {
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.subtitle {
+  font-size: 12px;
   color: #fff;
   margin: 10px;
 }
 
-.menuContent {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  margin-top: 50px;
+.subtitle > a {
+  text-decoration-style: dotted;
+  color: lightblue;
 }
 
-.menuItem {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-
+.disabled {
+  background-color: #fff;
+  border: 4px solid #b3b3b3;
+  filter: grayscale(1);
 }
 
-.menuItem1Img {
-  background: url(./assets/cake.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
+.weight-disabled {
+  background-color: #b3b3b3;
+  pointer-events: none;
 }
 
-.menuItem2Img {
-  background: url(./assets/pie.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-}
-
-.menuItem3Img {
-  background: url(./assets/stew.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-}
-
-.menuItem4Img {
-  background: url(./assets/cookie.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-}
-
-.menuItem5Img {
-  background: url(./assets/Honey_Bottle.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-}
-
-.menuItem6Img {
-  background: url(./assets/Potion_blue.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-}
-
-.menuItemText {
-  color: #fff;
-  font-family: 'Minecraft';
-  font-weight: normal;
-  font-style: normal;
-  text-align: center;
-}
-
-.contactContent {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-family: 'Minecraft Ten';
-  font-weight: normal;
-  font-style: normal;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-}
-
-.contactImage {
-  width: 550px;
-  height: 300px;
-  background: url(./assets/minecraft-restaurant2.jpg);
-  background-size: cover;
-}
-
-.contactTitle {
-  padding: 5px;
-  font-size: 21px;
-}
-
-@media (max-width: 980px) {
-  .header > h1 {
-    font-size: 21px;
-  }
-
-  .header > ul > li {
-    font-size: 16px;
-  }
-
-  .homeTitle {
-    font-size: 15px;
-  }
-
-  .homeContent {
-    padding: 5px;
-  }
-
-  .contactContent {
-    align-items: flex-start;
-    padding: 5px;
-  }
-
-  .contactTitle {
-    font-size: 12px;
-    padding: 0;
-    margin: 10px 0;
-  }
-
-  .contactImage {
-    width: 100%;
-    height: 150px;
-  }
-
-  .cook {
-    width: 200px;
-    height: 200px;
-  }
-
-  .menuContent {
-    grid-template-columns: 1fr;
-    padding: 15px;
-    margin: 90px;
-    gap: 30px;
-  }
-
-  .menuItem {
-
-  }
+.sub-disabled {
+  color: #ffff66;
 }

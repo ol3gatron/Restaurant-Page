@@ -1,37 +1,58 @@
-import css from "./style.css"
-import header from "./header.js"
-import home from "./main.js"
-import menu from "./menu.js"
-import contact from "./contact.js"
+import "./style.css";
 
-const container = document.createElement("div")
-container.className = "container"
+const cards = document.querySelectorAll(".card");
+const links = document.querySelectorAll("a");
 
-
-const mainContent = document.createElement("div")
-mainContent.className = "main"
-
-container.appendChild(header())
-mainContent.appendChild(home())
-container.appendChild(mainContent)
-document.body.appendChild(container)
-
-container.addEventListener("click", (e) => {
-  if (e.target.className === "home") {
-    container.style.height = "100vh"
-    mainContent.firstChild.remove()
-    mainContent.appendChild(home())
-  } else if (e.target.className === "menu") {
-    if (x.matches) {
-      container.style.height = "auto"
+cards.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    if (
+      e.target.className == "card" ||
+      e.target.className == "card card-selected"
+    ) {
+      card.children[0].textContent = "Сказочное заморское яство";
+      console.log(e.target.className);
     }
-    mainContent.firstChild.remove()
-    mainContent.appendChild(menu())
-  } else if (e.target.className === "contact") {
-    container.style.height = "100vh"
-    mainContent.firstChild.remove()
-    mainContent.appendChild(contact())
-  }
-})
 
-let x = window.matchMedia("(max-width: 950px)")
+    if (
+      e.target.className == "card" ||
+      e.target.className == "card card-selected"
+    ) {
+      card.classList.toggle("card-selected");
+      card.children[5].classList.toggle("weight-selected");
+      console.log(e.target.className);
+    }
+  });
+
+  card.addEventListener("mouseenter", (e) => {
+    if (e.target.className != "card disabled") {
+      e.target.style.filter = "brightness(1.1)";
+    }
+
+    if (e.target.className == "card card-selected") {
+      card.children[0].textContent = "Котэ не одобряет?";
+    }
+  });
+
+  card.addEventListener("mouseleave", (e) => {
+    if (e.target.className != "card disabled") {
+      e.target.style.filter = "brightness(1)";
+    }
+
+    if (e.target.className == "card card-selected") {
+      card.children[0].textContent = "Сказочное заморское яство";
+    }
+  });
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    link.parentNode.parentNode.children[0].classList.toggle("card-selected");
+    link.parentNode.parentNode.children[0].children[5].classList.toggle(
+      "weight-selected"
+    );
+    link.parentNode.parentNode.children[0].children[0].textContent =
+      "Сказочное заморское яство";
+
+    e.preventDefault();
+  });
+});
